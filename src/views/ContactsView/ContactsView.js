@@ -1,10 +1,11 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
-import ContactForm from '../components/ContactForm/ContactForm';
-import ContactsList from '../components/ContactsList/ContactsList';
-import Filter from '../components/Filter/Filter';
-import { contactsSelectors, contactsOperations } from '../redux/Contacts';
-import { authSelectors } from '../redux/auth';
+import ContactForm from '../../components/ContactForm/ContactForm';
+import ContactsList from '../../components/ContactsList/ContactsList';
+import Filter from '../../components/Filter/Filter';
+import { contactsSelectors, contactsOperations } from '../../redux/Contacts';
+import { authSelectors } from '../../redux/auth';
+import s from './ContactsView.module.css';
 
 export default function ContactsView() {
   const dispatch = useDispatch();
@@ -19,7 +20,8 @@ export default function ContactsView() {
   }, [dispatch, isLoggedIn]);
 
   return (
-    <>
+    <div className={s.wrapper}>
+      <h1>Phonebook</h1>
       <ContactForm />
 
       <h2>Contacts</h2>
@@ -31,6 +33,6 @@ export default function ContactsView() {
       ) : (
         <p>Your phonebook is empty. Please add contact.</p>
       )}
-    </>
+    </div>
   );
 }

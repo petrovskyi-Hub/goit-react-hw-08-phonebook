@@ -22,7 +22,7 @@ function Navigation() {
   return (
     <nav>
       <NavLink to="/" exact style={styles.link} activeStyle={styles.activeLink}>
-        Главная
+        Home
       </NavLink>
       {isLoggedIn && (
         <NavLink
@@ -31,7 +31,7 @@ function Navigation() {
           style={styles.link}
           activeStyle={styles.activeLink}
         >
-          Контакты
+          Contacts
         </NavLink>
       )}
     </nav>
